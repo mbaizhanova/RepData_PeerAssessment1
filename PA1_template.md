@@ -166,7 +166,7 @@ with(ANS,plot(x = interval,y = meanstep,type = "l", xlab = "time intervals",
               main = "Average number of steps per intervals"))
 ```
 
-![](PA1_template_files/figure-html/average daily activity pattern-1.png)<!-- -->
+![](PA1_template_files/figure-html/pattern-1.png)<!-- -->
 
 ```r
 ANS %>% filter(meanstep==max(meanstep))
