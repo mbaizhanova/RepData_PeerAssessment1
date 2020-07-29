@@ -3,9 +3,9 @@ title: 'Reproducible Research: Peer Assessment 1'
 author: "Madina Baizhanova"
 date: "7/29/2020"
 output:
-  pdf_document: default
   html_document:
     keep_md: yes
+  pdf_document: default
 ---
 The purpose of this assignment is to answer the questions given below.
 
@@ -73,7 +73,7 @@ of steps per day are **10766.19** and **10765** respectively.
 Here, a time series plot of the average number of steps per intervals will be
 plotted. (5-minute intervals on x-axis and the average number of steps averaged
 across all days on y-axis)
-```{r average daily activity pattern, echo=TRUE}
+```{r pattern, echo=TRUE}
 ANS <- activity %>% group_by(interval) %>% summarise(mean(steps, na.rm=TRUE))
 colnames(ANS) <- c("interval", "meanstep")
 with(ANS,plot(x = interval,y = meanstep,type = "l", xlab = "time intervals",
@@ -96,7 +96,7 @@ steps from the *activity* data frame above.
 Then I created a new data set which is equal to the original data set but with 
 the missing values filled in.
 
-```{r imputing missing values, echo=TRUE}
+```{r imputing, echo=TRUE}
 filler <- mean(activity$steps, na.rm = TRUE)
 na <- is.na(activity$steps)
 activity_imputed <- activity # creating a new data set
